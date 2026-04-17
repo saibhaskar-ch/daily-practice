@@ -14,7 +14,7 @@ const App = () => {
         <div className="flex gap-2 mb-3">
           <input
             type="text"
-            className="border-border bg-bg-tertiary border flex-10/12 rounded-lg p-2 text-sm text-text-secondary"
+            className="border-border bg-bg-tertiary border flex-10/12 rounded-lg p-2 text-sm text-input-and-button-text"
             placeholder="Add a new task..."
           />
 
@@ -42,8 +42,19 @@ const App = () => {
         {/* List */}
         <div>
           <ul>
-            <li className="border border-white flex">
-              {/* <input type="checkbox" name="" id="" className="w-5 h-5 rounded-full" /> */}
+            <li className="py-2 border-b-2 border-divider flex gap-3 justify-between items-center last:border-b-0">
+              <div className="list-left">
+                <Checkbox />
+                <p className="task-text">Testing asdfasdfasdfasdfasdf </p>
+              </div>
+              <button className="delete-button">X</button>
+            </li>
+            <li className="py-2 border-b-2 border-divider flex gap-3 justify-between items-center">
+              <div className="list-left">
+                <Checkbox />
+                <p className="task-text">Testing asdfasdfasdfasdfasdf </p>
+              </div>
+              <button className="delete-button">X</button>
             </li>
           </ul>
         </div>
