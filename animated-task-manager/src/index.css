@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+@theme {
+  /* Backgrounds */
+  --color-bg-primary: #1f1f1f;
+  --color-bg-secondary: #2a2a2a;
+  --color-bg-tertiary: #262626;
+
+  /* Surfaces / containers */
+  --color-surface: #2c2c2c;
+  --color-surface-soft: #303030;
+
+  /* Borders & dividers */
+  --color-border: #3a3a3a;
+  --color-divider: #2f2f2f;
+
+  /* Text */
+  --color-text-primary: #e5e5e5;
+  --color-text-secondary: #a3a3a3;
+  --color-text-muted: #7a7a7a;
+
+  /* Accent (blue) */
+  --color-accent: #3b82f6;
+  --color-accent-soft: #93c5fd;
+
+  /* Success (green) */
+  --color-success: #22c55e;
+  --color-success-soft: #16a34a;
+
+  /* Inputs & buttons */
+  --color-input: #1c1c1c;
+  --color-button: #bfcad6;
+  --color-button-text: #1e3a5f;
+
+  /* Interaction */
+  --color-hover: #333333;
+}
+
+@layer components {
+  .filter-list {
+    @apply flex;
+  }
+
+  .filter-list li {
+    @apply px-3 py-2 text-text-muted text-xs;
+  }
+
+  .filter-list li.selected {
+    @apply border-b-1 border-accent text-accent;
+  }
+
+  .round {
+    position: relative;
+  }
+
+  .round label {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    height: 28px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 28px;
+  }
+
+  .round label:after {
+    border: 2px solid #fff;
+    border-top: none;
+    border-right: none;
+    content: "";
+    height: 6px;
+    left: 7px;
+    opacity: 0;
+    position: absolute;
+    top: 8px;
+    transform: rotate(-45deg);
+    width: 12px;
+  }
+
+  .round input[type="checkbox"] {
+    visibility: hidden;
+  }
+
+  .round input[type="checkbox"]:checked + label {
+    background-color: #66bb6a;
+    border-color: #66bb6a;
+  }
+
+  .round input[type="checkbox"]:checked + label:after {
+    opacity: 1;
+  }
+}
