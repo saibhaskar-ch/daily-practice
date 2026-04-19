@@ -20,11 +20,15 @@ const TaskList = () => {
 
   return (
     <div className="px-5 md:max-h-100 max-h-20 overflow-y-scroll">
-      <ul>
-        {parseList(tasks, filterType).map((item:Task, key) => (
-          <TaskItem item={item} key={key} />
-        ))}
-      </ul>
+      {tasks.length > 0 ? (
+        <ul>
+          {parseList(tasks, filterType).map((item: Task, key) => (
+            <TaskItem item={item} key={key} />
+          ))}
+        </ul>
+      ) : (
+        <p className="text-center text-text-primary text-sm">No Tasks Found...</p>
+      )}
     </div>
   );
 };
