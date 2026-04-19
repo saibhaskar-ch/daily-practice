@@ -19,10 +19,11 @@ const AddTask = () => {
       />
 
       <button
-        className="task-add-button"
+        className="task-add-button opacity-75 hover:opacity-100 disabled:opacity-50"
         onClick={() => {
           taskContext?.addTask(description);
         }}
+        disabled={description?.trim().length == 0}
       >
         + Add
       </button>
