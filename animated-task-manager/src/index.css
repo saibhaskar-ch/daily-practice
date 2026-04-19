@@ -63,11 +63,11 @@
     @apply flex;
   }
 
-  .filter-list li {
+  .filter-list li button{
     @apply px-3 py-2 text-text-muted text-xs;
   }
 
-  .filter-list li.selected {
+  .filter-list li.selected button{
     @apply border-b border-accent text-accent;
   }
 
