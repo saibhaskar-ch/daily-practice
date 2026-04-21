@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: "mood-logger-backend"
+  datasource:
+    url: jdbc:h2:mem:mooddb
+    driverClassName: org.h2.Driver
+    username: sa
+    password: ''
+  # The below config makes sure to run data.sql / schema.sql
+  sql:
+    init:
+      mode: always
+  jpa:
+    # Makes sure hibernate creates table before executing sql scripts
+    defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+  h2:
+    console:
+      enabled: true
+server:
+  port: 8080
