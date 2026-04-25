@@ -1,14 +1,19 @@
-const App = () => {
-  return <div className="min-h-screen bg-dot-grid bg-stone-50 flex justify-center">
-    <div className="w-full md:max-w-270">
+import Heading from "./components/Heading";
+import MoodSelector from "./components/MoodSelector";
+import RecentMoods from "./components/RecentMoods";
 
-          <header className="md:mt-10">
-            <h2 className="text-lg font-semibold">mood_logger</h2>
-          </header>
+const App = () => {
+  return (
+    <div className="min-h-screen bg-dot-grid bg-stone-50 flex justify-center">
+      <div className="w-full md:max-w-270">
+        <Heading />
+        <div className="flex gap-15">
+          <MoodSelector />
+          <RecentMoods />
+        </div>
+      </div>
     </div>
-    
-    
-    </div>;
+  );
 };
 
 export default App;
