@@ -1,6 +1,6 @@
 import type { Mood } from "../types";
-
-
+import MoodSelectorItem from "./MoodSelectorItem";
+import Axios from "../lib/axios";
 
 const list: Mood[] = [
   { label: "Happy", emoji: "😊", value: "happy" },
@@ -16,18 +16,23 @@ const list: Mood[] = [
 ];
 
 const MoodSelector = () => {
+  const handleMoodSelect = async (value: string) => {
+    await Axios.post("/api/moods", { mood: value });
+  };
+
   return (
     <div className="flex-1">
-      <h3 className="uppercase text-xs tracking-wider font-semibold mb-5">
+      <h3 className="uppercase text-[10px] tracking-widest font-bold mb-5">
         How are you feeling?
       </h3>
 
       <div className="md:px-5 grid grid-cols-5 gap-6">
         {list.map((item: Mood) => (
-          <div key={item.value} className="text-center">
-            <p className="text-xl">{item.emoji}</p>
-            <p className="text-[8px]">{item.label}</p>
-          </div>
+          <MoodSelectorItem
+            item={item}
+            key={item.value}
+            onSelect={handleMoodSelect}
+          />
         ))}
       </div>
     </div>

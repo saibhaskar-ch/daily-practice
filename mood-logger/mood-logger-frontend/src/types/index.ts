@@ -16,4 +16,10 @@ type Mood = {
   value: string;
 };
 
-export type { Mood };
+type RecentMood = {
+  loggedAt: string;
+  mood: string;
+  emoji: string;
+};
+
+export type { Mood, RecentMood };

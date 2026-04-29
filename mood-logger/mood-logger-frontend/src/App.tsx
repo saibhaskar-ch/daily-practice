@@ -4,10 +4,10 @@ import RecentMoods from "./components/RecentMoods";
 
 const App = () => {
   return (
-    <div className="min-h-screen bg-dot-grid bg-stone-50 flex justify-center">
-      <div className="w-full md:max-w-270">
+    <div className="min-h-screen bg-dot-grid bg-stone-50 bg-fixed flex justify-center">
+      <div className="w-full max-h-screen md:max-w-270">
         <Heading />
-        <div className="flex gap-15">
+        <div className="flex flex-col lg:flex-row gap-15 lg:max-h-[70%]">
           <MoodSelector />
           <RecentMoods />
         </div>
